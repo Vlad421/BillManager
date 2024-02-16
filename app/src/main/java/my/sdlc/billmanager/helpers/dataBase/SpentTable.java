@@ -11,8 +11,9 @@ public class SpentTable extends Table{
     protected static final String CATEGORY = "category";
     protected static final String AMOUNT = "amount";
     protected static final String IMAGE = "image";
-    protected static final String DATE = "date";
-    protected static final String MONTH = "date_month";
+    protected static final String DAY = "day";
+    protected static final String MONTH = "month";
+    protected static final String YEAR = "year";
 
 
     public static SpentTable getInstance() {
