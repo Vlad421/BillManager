@@ -1,31 +1,46 @@
 package my.sdlc.billmanager.helpers.dataBase;
 
+import java.util.Map;
+
 import my.sdlc.billmanager.helpers.Constants;
 
-public class SpentTable extends Table{
+public class SpentTable extends Table {
 
-    private static SpentTable st;
+    private static SpentTable spentTable;
 
-    protected static final String TABLE_NAME = "spent";
-    protected static final String ID = "id";
-    protected static final String CATEGORY = "category";
-    protected static final String AMOUNT = "amount";
-    protected static final String IMAGE = "image";
-    protected static final String DAY = "day";
-    protected static final String MONTH = "month";
-    protected static final String YEAR = "year";
+
+   private static final String TABLE_NAME = "spent";
+   private static final String ID = "id";
+   private static final String CATEGORY = "category";
+   private static final String AMOUNT = "amount";
+   private static final String IMAGE = "image";
+   private static final String DAY = "day";
+   private static final String MONTH = "month";
+   private static final String YEAR = "year";
 
 
     public static SpentTable getInstance() {
-        if (st == null) {
-            st = new SpentTable();
-            return st;
+        if (spentTable == null) {
+            spentTable = new SpentTable();
+            return spentTable;
         }
-        return st;
+        return spentTable;
     }
 
-    private SpentTable(){
-        String[] cat = Constants.Categories.getCategories();
+    private SpentTable() {
+        Map<String, String> cat = Constants.Categories.getDefaultSpentCategories();
+    }
+
+    public String createTable() {
+        return TABLE_NAME + " (" +
+                ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                CATEGORY + " TEXT, " +
+                AMOUNT + " REAL, SIGNED, " +
+                IMAGE + " BLOB, " +
+                DAY+ " INTEGER, "+
+                MONTH+" INTEGER, "+
+                YEAR+" INTEGER, "+
+                ")";
     }
 
     @Override

@@ -13,7 +13,8 @@ public class DBase extends SQLiteOpenHelper {
 
     private static DBase db;
 
-    private SpentTable spentTable;
+    private final SpentTable spentTable;
+    private final IncomeTable incomeTable;
 
 
     public static DBase getInstance(Context context){
@@ -28,7 +29,8 @@ public class DBase extends SQLiteOpenHelper {
 
     private DBase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        this.spentTable =SpentTable.getInstance();
+        this.spentTable = SpentTable.getInstance();
+        this.incomeTable = IncomeTable.getInstance();
 
 
 
@@ -39,11 +41,9 @@ public class DBase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
 
-        sqLiteDatabase.execSQL("CREATE TABLE " + SpentTable.TABLE_NAME + " (" +
-                SpentTable.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                SpentTable.CATEGORY + " TEXT, " +
-                SpentTable.AMOUNT + " REAL, SIGNED," +
-                SpentTable.IMAGE + "BLOB" + ")");
+        sqLiteDatabase.execSQL("CREATE TABLE " + spentTable.createTable());
+        sqLiteDatabase.execSQL("CREATE TABLE " + incomeTable.createTable());
+
     }
 
     @Override
