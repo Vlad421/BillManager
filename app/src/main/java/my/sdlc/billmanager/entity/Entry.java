@@ -12,6 +12,8 @@ abstract class Entry {
  private String image;
  private Date date;
 
+
+
  public String getCategory() {
   return category;
  }

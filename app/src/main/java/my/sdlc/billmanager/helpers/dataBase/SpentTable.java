@@ -4,19 +4,22 @@ import java.util.Map;
 
 import my.sdlc.billmanager.helpers.Constants;
 
-public class SpentTable extends Table {
+public class SpentTable extends EntityTable {
 
     private static SpentTable spentTable;
+    private static final String CAT_TYPE = String.valueOf(CategoryTable.Type.SPENT);
 
 
    private static final String TABLE_NAME = "spent";
-   private static final String ID = "id";
+/* private static final String ID = "id";
    private static final String CATEGORY = "category";
    private static final String AMOUNT = "amount";
    private static final String IMAGE = "image";
    private static final String DAY = "day";
    private static final String MONTH = "month";
    private static final String YEAR = "year";
+*/
+
 
 
     public static SpentTable getInstance() {
@@ -28,10 +31,13 @@ public class SpentTable extends Table {
     }
 
     private SpentTable() {
+        super(TABLE_NAME);
         Map<String, String> cat = Constants.Categories.getDefaultSpentCategories();
     }
 
-    public String createTable() {
+
+
+/*    public String createTable() {
         return TABLE_NAME + " (" +
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 CATEGORY + " TEXT, " +
@@ -41,12 +47,9 @@ public class SpentTable extends Table {
                 MONTH+" INTEGER, "+
                 YEAR+" INTEGER, "+
                 ")";
-    }
+    }*/
 
-    @Override
-    boolean write() {
-        return false;
-    }
+
 
     @Override
     void read(DBase db) {

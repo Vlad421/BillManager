@@ -1,15 +1,24 @@
 package my.sdlc.billmanager.helpers.dataBase;
 
-public class CategoryTable extends Table{
+import android.content.ContentValues;
+
+public class CategoryTable extends Table {
+
+
+    enum Type{
+        INCOME,SPENT
+    }
 
     private static IncomeTable incomeTable;
 
     private static final String TABLE_NAME = "categories";
     private static final String TYPE = "type";
     private static final String CATEGORY = "category_id";
-    private  static final String CAT_DESC = "category_desc";
+    private static final String CAT_DESC = "category_desc";
 
-
+    CategoryTable(String tableName) {
+        super(tableName);
+    }
 
 
     public String createTable() {
@@ -21,10 +30,15 @@ public class CategoryTable extends Table{
 
                 ")";
     }
-    @Override
-    boolean write() {
-        return false;
+
+    void write(DBase dBase, String type, String category, String desc) {
+        ContentValues contentValue = new ContentValues();
+        contentValue.put(TYPE, type);
+        contentValue.put(CATEGORY, category);
+        contentValue.put(CAT_DESC, desc);
+        dBase.getWritableDatabase().insert(TABLE_NAME, null, contentValue);
     }
+
 
     @Override
     void read(DBase db) {

@@ -28,16 +28,7 @@ public class Constants {
                 Map.entry("PETS", "Pets"),
                 Map.entry("HOLIDAYS", "Holidays"),
                 Map.entry("TOOLS", "Tools")
-
-
-
         );
-
-
-
-
-              //                  "GROCERY : grocery", "COSMETICS", "TRANSPORTATION", "EATING_OUT", "ENTERTAINMENT", "MOBILE_INTERNET", "MEDICATION", "CLOTHES_SHOES",
-                //                        "SMOKING", "TOYS_CRAFT", "APPLIANCES_TECHS", "HOME_WARE", "LAUNDRY", "RENT", "UTILITIES", "PETS", "HOLIDAYS, TOOLS"
 
 
         private static final String[] defaultIncomeCategories = {"JOB", "FB_MARKET","GIG"};
