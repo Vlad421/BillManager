@@ -5,9 +5,7 @@ import android.content.ContentValues;
 public class CategoryTable extends Table {
 
 
-    enum Type{
-        INCOME,SPENT
-    }
+
 
     private static IncomeTable incomeTable;
 

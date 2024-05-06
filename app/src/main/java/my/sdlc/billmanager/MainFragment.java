@@ -12,14 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MainFragment#getInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MainFragment extends Fragment {
 
-    private static MainFragment fragment;
+    private MainFragment fragment;
     private Button incomeButton;
     private Button expensesButton;
 
@@ -27,15 +23,6 @@ public class MainFragment extends Fragment {
 
     }
 
-
-    public static MainFragment getInstance() {
-        if (fragment == null) {
-            fragment = new MainFragment();
-        }
-
-
-        return fragment;
-    }
 
 
     @Override

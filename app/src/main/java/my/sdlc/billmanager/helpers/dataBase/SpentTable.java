@@ -7,7 +7,7 @@ import my.sdlc.billmanager.helpers.Constants;
 public class SpentTable extends EntityTable {
 
     private static SpentTable spentTable;
-    private static final String CAT_TYPE = String.valueOf(CategoryTable.Type.SPENT);
+    private static final String CAT_TYPE = String.valueOf(Constants.Type.SPENT);
 
 
    private static final String TABLE_NAME = "spent";

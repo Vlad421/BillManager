@@ -1,9 +1,11 @@
 package my.sdlc.billmanager.helpers.dataBase;
 
+import my.sdlc.billmanager.helpers.Constants;
+
 public class IncomeTable extends EntityTable {
 
     private static IncomeTable incomeTable;
-    private static final String CAT_TYPE = String.valueOf(CategoryTable.Type.INCOME);
+    private static final String CAT_TYPE = String.valueOf(Constants.Type.INCOME);
 
     private static final String TABLE_NAME = "income";
 

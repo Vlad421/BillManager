@@ -11,6 +11,7 @@ abstract class Entry {
  private String amount ;
  private String image;
  private Date date;
+ private String type;
 
 
 
@@ -52,5 +53,13 @@ abstract class Entry {
 
  public void setDate(Date date) {
   this.date = date;
+ }
+
+ public String getType() {
+  return type;
+ }
+
+ public void setType(String type) {
+  this.type = type;
  }
 }

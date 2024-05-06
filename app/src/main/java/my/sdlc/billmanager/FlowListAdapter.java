@@ -9,9 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
+import my.sdlc.billmanager.entity.Earn;
+
 public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryHolder> {
 
-    String[] data;
+    ArrayList<Earn> data;
 
     class EntryHolder extends RecyclerView.ViewHolder {
         TextView text;
@@ -28,7 +32,7 @@ public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryH
     }
 
 
-    public FlowListAdapter(String[] data) {
+    public FlowListAdapter(ArrayList<Earn> data) {
         this.data = data;
     }
 
@@ -43,12 +47,12 @@ public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryH
 
     @Override
     public void onBindViewHolder(@NonNull EntryHolder holder, int position) {
-        holder.getTextView().setText(data[position]);
+        holder.getTextView().setText(data.get(position).getCategory());
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return data.size();
     }
 
 

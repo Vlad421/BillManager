@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/mainFragment">
+
     <fragment
         android:id="@+id/mainFragment"
         android:name="my.sdlc.billmanager.MainFragment"
@@ -11,11 +12,19 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_addFragment"
+            app:destination="@id/incomeFlowFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addFragment2"
             app:destination="@id/addFragment" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_add"
+        tools:layout="@layout/fragment_income_flow"
+        android:id="@+id/incomeFlowFragment"
+        android:name="my.sdlc.billmanager.IncomeFlowFragment"
+        android:label="Flow" />
+
+    <fragment tools:layout="@layout/fragment_add_entry"
         android:id="@+id/addFragment"
         android:name="my.sdlc.billmanager.AddFragment"
-        android:label="Flow" />
+        android:label="Add"/>
 </navigation>
