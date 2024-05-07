@@ -5,28 +5,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Spinner
-        android:id="@+id/spinner_type"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/text_view_entry_type"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Select entry type first"
+        android:padding="6dp"
+        android:layout_margin="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:spinnerMode="dropdown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <Spinner
-        android:id="@+id/spinner_category"
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinner_type"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="60dp"
+        android:layout_margin="4dp"
         android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_entry_type" />
+    <TextView
+        android:id="@+id/text_view_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select category"
+        android:padding="6dp"
+        android:layout_margin="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinner_type" />
+    <my.sdlc.billmanager.helpers.UI.NDSpinner
+        android:id="@+id/spinner_category"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="4dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_category" />
 
     <EditText
         android:id="@+id/edit_text_add_text_description"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="short description"
+        android:layout_height="60dp"
+        android:layout_margin="4dp"
+        android:hint="Short description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinner_category" />
@@ -34,19 +57,35 @@
     <EditText
         android:id="@+id/edit_text_add_amount"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="amount"
+        android:layout_height="60dp"
+        android:layout_margin="4dp"
+        android:inputType = "numberDecimal"
+        android:hint="Transaction amount"
+        android:text=" 5.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text_add_text_description" />
-
+    <EditText
+        android:id="@+id/edit_text_pick_date"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="4dp"
+        android:hint="Transaction date"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_add_amount" />
 
     <Button
         android:id="@+id/button_add_entry"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:layout_margin="4dp"
         android:text="Add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_add_amount" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_pick_date" />
 </androidx.constraintlayout.widget.ConstraintLayout>
