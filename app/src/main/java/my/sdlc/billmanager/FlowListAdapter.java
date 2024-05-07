@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import my.sdlc.billmanager.entity.Earn;
+import my.sdlc.billmanager.entity.flow.Earn;
 
 public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryHolder> {
 

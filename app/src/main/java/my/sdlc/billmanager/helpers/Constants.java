@@ -1,5 +1,7 @@
 package my.sdlc.billmanager.helpers;
 
+import androidx.annotation.NonNull;
+
 import java.util.Map;
 
 public class Constants {
@@ -13,15 +15,15 @@ public class Constants {
                 Map.entry("GROCERY", "Grocery"),
                 Map.entry("COSMETICS", "Cosmetics"),
                 Map.entry("TRANSPORTATION", "Transportation"),
-                Map.entry("EATING_OUT", "Eating_out"),
+                Map.entry("EATING_OUT", "Eating out"),
                 Map.entry("ENTERTAINMENT", "Entertainment"),
-                Map.entry("MOBILE_INTERNET", "Mobile_internet"),
+                Map.entry("MOBILE_INTERNET", "Mobile/internet"),
                 Map.entry("MEDICATION", "Medication"),
-                Map.entry("CLOTHES_SHOES", "Clothes_shoes"),
+                Map.entry("CLOTHES_SHOES", "Clothes/shoes"),
                 Map.entry("SMOKING", "Smoking"),
-                Map.entry("TOYS_CRAFT", "Toys_craft"),
-                Map.entry("APPLIANCES_TECHS", "Appliances_techs"),
-                Map.entry("HOME_WARE", "Home_ware"),
+                Map.entry("TOYS_CRAFT", "Toys/craft"),
+                Map.entry("APPLIANCES_TECHS", "Appliances/techs"),
+                Map.entry("HOME_WARE", "Home/ware"),
                 Map.entry("LAUNDRY", "Laundry"),
                 Map.entry("RENT", "Rent"),
                 Map.entry("UTILITIES", "Utilities"),
@@ -31,11 +33,22 @@ public class Constants {
         );
 
 
-        private static final String[] defaultIncomeCategories = {"JOB", "FB_MARKET","GIG"};
+        private static final Map<String,String> defaultIncomeCategories = Map.ofEntries(
+                Map.entry("JOB", "Job"),
+                Map.entry("FB_MARKET", "FB Market"),
+                Map.entry("GIG", "Gig")
+        );
+
+
 
         public static Map<String, String> getDefaultSpentCategories() {
             return defaultSpentCategories;
         }
+
+        public static Map<String, String> getDefaultIncomeCategories() {
+            return defaultIncomeCategories;
+        }
+
         public static void setCategories(){
 
         }
@@ -46,6 +59,12 @@ public class Constants {
     }
 
     public enum Type{
-        INCOME,SPENT
+        INCOME,SPENT,NONE;
+
+        @NonNull
+        @Override
+        public String toString() {
+            return super.toString();
+        }
     }
 }

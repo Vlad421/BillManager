@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import my.sdlc.billmanager.entity.Earn;
+import my.sdlc.billmanager.entity.flow.Earn;
 
 
 public class IncomeFlowFragment extends Fragment {
