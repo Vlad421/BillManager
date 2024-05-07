@@ -1,4 +1,4 @@
-package my.sdlc.billmanager.entity;
+package my.sdlc.billmanager.entity.flow;
 
 import java.math.BigDecimal;
 import java.util.Date;

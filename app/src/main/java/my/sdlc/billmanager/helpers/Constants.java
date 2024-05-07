@@ -1,5 +1,7 @@
 package my.sdlc.billmanager.helpers;
 
+import androidx.annotation.NonNull;
+
 import java.util.Map;
 
 public class Constants {
@@ -31,11 +33,22 @@ public class Constants {
         );
 
 
-        private static final String[] defaultIncomeCategories = {"JOB", "FB_MARKET","GIG"};
+        private static final Map<String,String> defaultIncomeCategories = Map.ofEntries(
+                Map.entry("JOB", "Job"),
+                Map.entry("FB_MARKET", "FB Market"),
+                Map.entry("GIG", "Gig")
+        );
+
+
 
         public static Map<String, String> getDefaultSpentCategories() {
             return defaultSpentCategories;
         }
+
+        public static Map<String, String> getDefaultIncomeCategories() {
+            return defaultIncomeCategories;
+        }
+
         public static void setCategories(){
 
         }
@@ -46,6 +59,12 @@ public class Constants {
     }
 
     public enum Type{
-        INCOME,SPENT
+        INCOME,SPENT,NONE;
+
+        @NonNull
+        @Override
+        public String toString() {
+            return super.toString();
+        }
     }
 }
