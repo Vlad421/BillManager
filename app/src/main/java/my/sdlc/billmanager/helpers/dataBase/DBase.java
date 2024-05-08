@@ -29,8 +29,8 @@ public class DBase extends SQLiteOpenHelper {
 
     private DBase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        this.spentTable = SpentTable.getInstance();
-        this.incomeTable = IncomeTable.getInstance();
+        this.spentTable = SpentTable.getInstance(this);
+        this.incomeTable = IncomeTable.getInstance(this);
 
 
 
@@ -53,5 +53,11 @@ public class DBase extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
+    public SpentTable getSpentTable() {
+        return spentTable;
+    }
 
+    public IncomeTable getIncomeTable() {
+        return incomeTable;
+    }
 }

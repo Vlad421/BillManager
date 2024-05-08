@@ -20,16 +20,22 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Objects;
 
+import my.sdlc.billmanager.helpers.dataBase.DBManager;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private Toolbar toolbar;
     private NavController navController;
     private FloatingActionButton floatingActionButtonMain;
+    private DBManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        dbManager = DBManager.getInstance(getApplicationContext());
+
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);

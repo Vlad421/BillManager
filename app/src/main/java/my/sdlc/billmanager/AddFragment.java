@@ -27,6 +27,7 @@ import java.util.stream.Stream;
 
 import my.sdlc.billmanager.helpers.Constants;
 import my.sdlc.billmanager.helpers.UI.NDSpinner;
+import my.sdlc.billmanager.helpers.dataBase.DBManager;
 
 public class AddFragment extends Fragment {
 
@@ -106,14 +107,6 @@ public class AddFragment extends Fragment {
         spinnerCategory.setAdapter(adapterCategory);
 
 
-/*        String entryType;
-        String category;
-        String description;
-        String amount;
-        String year;
-        String month;
-        String day;*/
-
         spinnerType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -185,7 +178,8 @@ public class AddFragment extends Fragment {
                 day = myCalendar.get(Calendar.DAY_OF_MONTH);
                 month = myCalendar.get(Calendar.MONTH); //month starts from 0
                 String textToToast = entryType + " " + category + " " + description + " " + amount + " " + year + " " + month + " " + day;
-                Toast.makeText(requireContext(), textToToast, Toast.LENGTH_SHORT).show();
+                DBManager.getInstance(requireContext()).writeEntry(entryType,category,description,amount,year,month,day);
+                //Toast.makeText(requireContext(), textToToast, Toast.LENGTH_SHORT).show();
             }
         });
 

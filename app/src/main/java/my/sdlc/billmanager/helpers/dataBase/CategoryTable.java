@@ -14,8 +14,8 @@ public class CategoryTable extends Table {
     private static final String CATEGORY = "category_id";
     private static final String CAT_DESC = "category_desc";
 
-    CategoryTable(String tableName) {
-        super(tableName);
+    CategoryTable(String tableName,DBase dBase) {
+        super(tableName,dBase);
     }
 
 

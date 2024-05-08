@@ -22,38 +22,29 @@ public class SpentTable extends EntityTable {
 
 
 
-    public static SpentTable getInstance() {
+    public static SpentTable getInstance(DBase dBase) {
         if (spentTable == null) {
-            spentTable = new SpentTable();
+            spentTable = new SpentTable(dBase);
             return spentTable;
         }
         return spentTable;
     }
 
-    private SpentTable() {
-        super(TABLE_NAME);
+    private SpentTable(DBase dBase) {
+        super(TABLE_NAME,dBase);
         Map<String, String> cat = Constants.Categories.getDefaultSpentCategories();
     }
 
 
-
-/*    public String createTable() {
-        return TABLE_NAME + " (" +
-                ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                CATEGORY + " TEXT, " +
-                AMOUNT + " REAL, SIGNED, " +
-                IMAGE + " BLOB, " +
-                DAY+ " INTEGER, "+
-                MONTH+" INTEGER, "+
-                YEAR+" INTEGER, "+
-                ")";
-    }*/
-
-
+    @Override
+    public void writeEntry(String category, String description, float amount, int year, int month, int day) {
+        super.writeEntry(category, description, amount, year, month, day);
+    }
 
     @Override
     void read(DBase db) {
 
 
     }
+
 }

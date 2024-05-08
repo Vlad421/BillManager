@@ -2,10 +2,12 @@ package my.sdlc.billmanager.helpers.dataBase;
 
 public abstract class Table {
 
-    public  final String TABLE_NAME;
+    protected   final String TABLE_NAME;
+    protected   final DBase dBase;
 
-    public Table(String tableName){
+    public Table(String tableName,DBase dBase){
         this.TABLE_NAME = tableName;
+        this.dBase = dBase;
     }
 
     abstract void read(DBase db);

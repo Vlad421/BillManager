@@ -5,7 +5,7 @@ import my.sdlc.billmanager.helpers.Constants;
 public class IncomeTable extends EntityTable {
 
     private static IncomeTable incomeTable;
-    private static final String CAT_TYPE = String.valueOf(Constants.Type.INCOME);
+
 
     private static final String TABLE_NAME = "income";
 
@@ -18,16 +18,16 @@ public class IncomeTable extends EntityTable {
     private static final String YEAR = "year";
 */
 
-    public static IncomeTable getInstance() {
+    public static IncomeTable getInstance(DBase dBase) {
         if (incomeTable == null) {
-            incomeTable = new IncomeTable();
+            incomeTable = new IncomeTable(dBase);
             return incomeTable;
         }
         return incomeTable;
     }
 
-    private IncomeTable(){
-        super(TABLE_NAME);
+    private IncomeTable(DBase dBase){
+        super(TABLE_NAME, dBase);
 
     }
 
@@ -43,6 +43,10 @@ public class IncomeTable extends EntityTable {
                 ")";
     }*/
 
+    @Override
+    public void writeEntry(String category, String description, float amount, int year, int month, int day) {
+        super.writeEntry(category, description, amount, year, month, day);
+    }
 
     @Override
     void read(DBase db) {
