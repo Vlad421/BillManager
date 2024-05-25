@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager;
 
 import android.os.Bundle;
@@ -12,9 +17,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 public class MainFragment extends Fragment {
-
+    /**
+     * Main Fragment handles main screen UI
+     */
     private MainFragment fragment;
     private Button incomeButton;
     private Button expensesButton;

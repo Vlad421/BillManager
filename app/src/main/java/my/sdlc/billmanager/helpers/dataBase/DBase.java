@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager.helpers.dataBase;
 
 import android.content.Context;
@@ -7,8 +12,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import my.sdlc.billmanager.helpers.dataBase.tables.IncomeTable;
 import my.sdlc.billmanager.helpers.dataBase.tables.SpentTable;
 
-
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 public class DBase extends SQLiteOpenHelper {
+    /**
+     * Database Version
+     */
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "manager.db";
@@ -18,7 +28,11 @@ public class DBase extends SQLiteOpenHelper {
     private final SpentTable spentTable;
     private final IncomeTable incomeTable;
 
-
+    /**
+     *
+     * @param context app context
+     * @return DBase instance
+     */
     public static DBase getInstance(Context context){
         if (db == null){
             db =  new DBase(context);
@@ -28,7 +42,10 @@ public class DBase extends SQLiteOpenHelper {
     }
 
 
-
+    /**
+     * Constructor
+     * @param context app context
+     */
     private DBase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.spentTable = SpentTable.getInstance(this);

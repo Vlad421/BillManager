@@ -1,28 +1,37 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
+
 package my.sdlc.billmanager;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
-import java.util.Objects;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import my.sdlc.billmanager.helpers.dataBase.DBManager;
 
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 public class MainActivity extends AppCompatActivity {
+    /**
+     * Main activity of the application.
+     *
+     */
+
 
     private AppBarConfiguration appBarConfiguration;
     private Toolbar toolbar;

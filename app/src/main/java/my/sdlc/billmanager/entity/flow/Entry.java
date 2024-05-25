@@ -1,10 +1,20 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager.entity.flow;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 public abstract class Entry {
-
+    /**
+     * Abstract class for entry
+     */
 
     private String category;
     private String description;

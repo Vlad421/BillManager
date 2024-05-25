@@ -1,15 +1,29 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager.helpers;
 
 import androidx.annotation.NonNull;
 
 import java.util.Map;
 
-public class Constants {
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 
+public class Constants {
+    /**
+     * Constants
+     */
 
 
     //Categories
     public static class Categories {
+        /**
+         * Default categories
+         */
         private static final Map<String,String> defaultSpentCategories = Map.ofEntries(
 
                 Map.entry("GROCERY", "Grocery"),
@@ -59,6 +73,9 @@ public class Constants {
     }
 
     public enum Type{
+        /**
+         * Types of entries
+         */
         INCOME,SPENT,NONE;
 
         @NonNull

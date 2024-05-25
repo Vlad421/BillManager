@@ -1,11 +1,20 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager.helpers.dataBase.tables;
 
 import android.content.ContentValues;
 
 import my.sdlc.billmanager.helpers.dataBase.DBase;
-
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 public class CategoryTable extends Table {
-
+    /**
+     * CategoryTable handles categories table in database
+     */
 
 
 
@@ -16,11 +25,19 @@ public class CategoryTable extends Table {
     private static final String CATEGORY = "category_id";
     private static final String CAT_DESC = "category_desc";
 
+    /**
+     * CategoryTable constructor
+     * @param tableName table name
+     * @param dBase database
+     */
     CategoryTable(String tableName, DBase dBase) {
         super(tableName,dBase);
     }
 
-
+    /**
+     * Creates table
+     * @return string query
+     */
     public String createTable() {
         return TABLE_NAME + " (" +
                 TYPE + " TEXT, " +
@@ -31,6 +48,13 @@ public class CategoryTable extends Table {
                 ")";
     }
 
+    /**
+     * Writes data to database
+     * @param dBase database
+     * @param type type of category
+     * @param category category
+     * @param desc description
+     */
     void write(DBase dBase, String type, String category, String desc) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(TYPE, type);
