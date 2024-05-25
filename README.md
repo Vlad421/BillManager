@@ -1,4 +1,3 @@
-Sure! Here's the entire README.md file with all the edits included:
 
 ```markdown
 # BillManager
