@@ -1,6 +1,8 @@
-package my.sdlc.billmanager.helpers.dataBase;
+package my.sdlc.billmanager.helpers.dataBase.tables;
 
 import android.content.ContentValues;
+
+import my.sdlc.billmanager.helpers.dataBase.DBase;
 
 public class CategoryTable extends Table {
 
@@ -14,7 +16,7 @@ public class CategoryTable extends Table {
     private static final String CATEGORY = "category_id";
     private static final String CAT_DESC = "category_desc";
 
-    CategoryTable(String tableName,DBase dBase) {
+    CategoryTable(String tableName, DBase dBase) {
         super(tableName,dBase);
     }
 

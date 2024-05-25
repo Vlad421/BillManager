@@ -3,6 +3,9 @@ package my.sdlc.billmanager.helpers.dataBase;
 import android.content.Context;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import my.sdlc.billmanager.entity.flow.Entry;
 import my.sdlc.billmanager.helpers.Constants;
 
 public class DBManager {
@@ -40,4 +43,7 @@ public class DBManager {
     }
 
 
+    public ArrayList<Entry> readEntries() {
+        return dB.getIncomeTable().read();
+    }
 }

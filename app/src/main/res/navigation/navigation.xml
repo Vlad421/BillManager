@@ -20,7 +20,7 @@
     <fragment
         tools:layout="@layout/fragment_income_flow"
         android:id="@+id/incomeFlowFragment"
-        android:name="my.sdlc.billmanager.IncomeFlowFragment"
+        android:name="my.sdlc.billmanager.FlowFragment"
         android:label="Flow" />
 
     <fragment tools:layout="@layout/fragment_add_entry"

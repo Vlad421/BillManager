@@ -14,13 +14,14 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import my.sdlc.billmanager.entity.flow.Earn;
+import my.sdlc.billmanager.entity.flow.Entry;
+import my.sdlc.billmanager.helpers.dataBase.DBManager;
 
 
-public class IncomeFlowFragment extends Fragment {
+public class FlowFragment extends Fragment {
 
 
-    public IncomeFlowFragment() {
+    public FlowFragment() {
         // Required empty public constructor
 
 
@@ -33,16 +34,17 @@ public class IncomeFlowFragment extends Fragment {
 
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.fragment_income_flow, container, false);
 
+        // reads db
 
 
-        FlowListAdapter IncomeFlowAdapter = new FlowListAdapter(new ArrayList<Earn>());
+        FlowListAdapter incomeFlowAdapter = new FlowListAdapter(readEntries());
 
 
         RecyclerView flowView = view.findViewById(R.id.recycler_view);
         flowView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
-        flowView.setAdapter(IncomeFlowAdapter);
+        flowView.setAdapter(incomeFlowAdapter);
 
         return view;
     }
@@ -50,5 +52,11 @@ public class IncomeFlowFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+    }
+
+
+
+    private ArrayList<Entry> readEntries(){
+        return DBManager.getInstance(requireContext()).readEntries();
     }
 }

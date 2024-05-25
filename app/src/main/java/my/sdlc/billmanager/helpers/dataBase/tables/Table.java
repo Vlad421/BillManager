@@ -1,4 +1,6 @@
-package my.sdlc.billmanager.helpers.dataBase;
+package my.sdlc.billmanager.helpers.dataBase.tables;
+
+import my.sdlc.billmanager.helpers.dataBase.DBase;
 
 public abstract class Table {
 
