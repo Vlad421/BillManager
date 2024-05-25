@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager.helpers.dataBase;
 
 import android.content.Context;
@@ -7,14 +12,24 @@ import java.util.ArrayList;
 
 import my.sdlc.billmanager.entity.flow.Entry;
 import my.sdlc.billmanager.helpers.Constants;
-
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 public class DBManager {
+    /**
+     * Data base manager class
+     */
 
     private DBase dB;
     private Context context;
 
     private static DBManager dbManager;
 
+    /**
+     *
+     * @param context app context
+     * @return DBManager
+     */
     public static DBManager getInstance(Context context) {
         if (dbManager == null) {
             dbManager = new DBManager(context);
@@ -28,6 +43,16 @@ public class DBManager {
         this.dB = DBase.getInstance(context);
     }
 
+    /**
+     * Write entry to database
+     * @param database database name
+     * @param category entry category
+     * @param description entry description
+     * @param amount transaction amount
+     * @param year transaction year
+     * @param month transaction month
+     * @param day transaction day
+     */
     public void writeEntry(String database, String category, String description, float amount, int year, int month, int day) {
 
 
@@ -42,7 +67,10 @@ public class DBManager {
 
     }
 
-
+    /**
+     * Read entries from database
+     * @return ArrayList<Entry>
+     */
     public ArrayList<Entry> readEntries() {
         return dB.getIncomeTable().read();
     }

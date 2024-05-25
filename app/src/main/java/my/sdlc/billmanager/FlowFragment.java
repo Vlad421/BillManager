@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager;
 
 import android.content.Context;
@@ -17,9 +22,14 @@ import java.util.ArrayList;
 import my.sdlc.billmanager.entity.flow.Entry;
 import my.sdlc.billmanager.helpers.dataBase.DBManager;
 
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 
 public class FlowFragment extends Fragment {
-
+    /**
+     * Fragment to display Flow RecyclerView
+     */
 
     public FlowFragment() {
         // Required empty public constructor

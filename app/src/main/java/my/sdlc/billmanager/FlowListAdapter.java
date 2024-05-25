@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager;
 
 
@@ -14,9 +19,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import my.sdlc.billmanager.entity.flow.Entry;
-
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 /** @noinspection ClassEscapesDefinedScope*/
+
 public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryHolder> {
+
+    /**
+     * RecyclerView adapter to handle displaying of entries
+     *
+     */
 
     ArrayList<Entry> data;
 
@@ -57,6 +70,10 @@ public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryH
     }
 
 
+    /**
+     * Constructor
+     * @param data list of entries
+     */
     public FlowListAdapter(ArrayList<Entry> data) {
         this.data = data;
     }

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024.
+  ~ Vlad421 https://github.com/Vlad421
+  -->
+
 <resources>
     <style name="button_shape">
         <item name="cornerFamily">rounded</item>

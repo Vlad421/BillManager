@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager;
 
 import android.app.DatePickerDialog;
@@ -28,9 +33,13 @@ import java.util.stream.Stream;
 import my.sdlc.billmanager.helpers.Constants;
 import my.sdlc.billmanager.helpers.UI.NDSpinner;
 import my.sdlc.billmanager.helpers.dataBase.DBManager;
-
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 public class AddFragment extends Fragment {
-
+    /**
+     * Enter entry information Fragment
+     */
 
     final Calendar myCalendar = Calendar.getInstance();
 
@@ -188,7 +197,9 @@ public class AddFragment extends Fragment {
 
     }
 
-
+    /**
+     * Update date label
+     */
     private void updateDateLabel() {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.US);

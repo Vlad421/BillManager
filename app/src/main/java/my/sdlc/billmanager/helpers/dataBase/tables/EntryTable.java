@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2024.
+ * Vlad421 https://github.com/Vlad421
+ */
+
 package my.sdlc.billmanager.helpers.dataBase.tables;
 
 import android.content.ContentValues;
@@ -15,8 +20,13 @@ import my.sdlc.billmanager.entity.flow.Spent;
 import my.sdlc.billmanager.helpers.Constants;
 import my.sdlc.billmanager.helpers.dataBase.DBase;
 
+/**
+ * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
+ */
 public abstract class EntryTable extends Table {
-
+    /**
+     * Abstract class for Entry table
+     */
 
     protected static final String ID = "id";
     protected static final String CATEGORY = "category";
@@ -31,6 +41,11 @@ public abstract class EntryTable extends Table {
         super(tableName, dBase);
     }
 
+    /**
+     * This method is used to create table in database.
+     *
+     * @return String query
+     */
     public String createTable() {
         return TABLE_NAME + " (" +
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -44,56 +59,60 @@ public abstract class EntryTable extends Table {
                 ")";
     }
 
-
+    /**
+     * This method is used to write data in our database.
+     *
+     * @param category    Entry category
+     * @param description Entry description
+     * @param amount      Transaction amount
+     * @param year        Transaction year
+     * @param month       Transaction month
+     * @param day         Transaction day
+     */
     protected void writeEntry(String category, String description, float amount, int year, int month, int day) {
 
-        // on below line we are creating a variable for
-        // our sqlite database and calling writable method
-        // as we are writing data in our database.
+        // Creating writable database.
         SQLiteDatabase db = dBase.getWritableDatabase();
 
-        // on below line we are creating a
-        // variable for content values.
+        // Creating content values.
         ContentValues values = new ContentValues();
 
-        // on below line we are passing all values
-        // along with its key and value pair.
+        // put data in content values
         values.put(CATEGORY, category);
         values.put(DESCRIPTION, description);
         float roundedAmount;
         BigDecimal bd = new BigDecimal(Float.toString(amount));
         bd = bd.setScale(2, RoundingMode.HALF_UP);
-        //return bd.floatValue();
+
         values.put(AMOUNT, bd.floatValue());
         values.put(YEAR, year);
         values.put(MONTH, month);
         values.put(DAY, day);
 
-        // after adding all values we are passing
-        // content values to our table.
+        // inserting our values in database.
         db.insert(TABLE_NAME, null, values);
 
-        // at last we are closing our
-        // database after adding database.
+        // closing database.
         db.close();
 
     }
 
+    /**
+     * This method is used to read data from our database.
+     *
+     * @return ArrayList<Entry> list of entries
+     */
     public ArrayList<Entry> read() {
         ArrayList<Entry> entries = new ArrayList<>();
 
 
-        // on below line we are creating a
-        // database for reading our database.
+        //creating a readable database
         SQLiteDatabase db = dBase.getReadableDatabase();
 
-        // on below line we are creating a cursor with query to read data from database.
+        // getting cursor for data base
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
 
-        // on below line we are creating a new array list.
-
-
-        // moving our cursor to first position.
+        //reading data from cursor
         if (cursor.moveToFirst()) {
             do {
                 Entry entry;
@@ -102,7 +121,7 @@ public abstract class EntryTable extends Table {
                 } else {
                     entry = new Earn();
                 }
-                // on below line we are adding the data from cursor to our array list.
+
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(Calendar.YEAR, cursor.getInt(7));
                 calendar.set(Calendar.MONTH, cursor.getInt(6));
@@ -115,10 +134,9 @@ public abstract class EntryTable extends Table {
                 entry.setAmount(cursor.getFloat(3));
                 entries.add(entry);
             } while (cursor.moveToNext());
-            // moving our cursor to next.
+
         }
-        // at last closing our cursor
-        // and returning our array list.
+
         cursor.close();
 
         return entries;
