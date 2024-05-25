@@ -1,9 +1,10 @@
-
-```markdown
 # BillManager
 
-## Description
 BillManager is a home budgeting program designed to help you manage your finances efficiently. It allows you to track your income, expenses, and savings to stay on top of your budget.
+
+
+
+```markdown
 
 ## Main Features
 - **Organization of Expenses and Income:** Easily record and categorize your various sources of income and types of expenses.
