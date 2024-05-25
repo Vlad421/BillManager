@@ -15,10 +15,12 @@ import java.util.ArrayList;
 
 import my.sdlc.billmanager.entity.flow.Entry;
 
+/** @noinspection ClassEscapesDefinedScope*/
 public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryHolder> {
 
     ArrayList<Entry> data;
 
+    /** @noinspection InnerClassMayBeStatic*/
     class EntryHolder extends RecyclerView.ViewHolder {
         TextView descriptionView;
         TextView amountView;
