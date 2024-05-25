@@ -108,8 +108,3 @@ Make sure you have the necessary environment variables set up, such as `JAVA_HOM
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
-## Acknowledgements
-- Thank you to all the contributors who have helped improve this project.
-- Special thanks to the open-source community for their invaluable resources and tools.
-
