@@ -1,25 +1,17 @@
-package my.sdlc.billmanager.helpers.dataBase;
+package my.sdlc.billmanager.helpers.dataBase.tables;
 
 import java.util.Map;
 
 import my.sdlc.billmanager.helpers.Constants;
+import my.sdlc.billmanager.helpers.dataBase.DBase;
 
-public class SpentTable extends EntityTable {
+public class SpentTable extends EntryTable {
 
     private static SpentTable spentTable;
     private static final String CAT_TYPE = String.valueOf(Constants.Type.SPENT);
 
 
    private static final String TABLE_NAME = "spent";
-/* private static final String ID = "id";
-   private static final String CATEGORY = "category";
-   private static final String AMOUNT = "amount";
-   private static final String IMAGE = "image";
-   private static final String DAY = "day";
-   private static final String MONTH = "month";
-   private static final String YEAR = "year";
-*/
-
 
 
     public static SpentTable getInstance(DBase dBase) {
@@ -42,7 +34,7 @@ public class SpentTable extends EntityTable {
     }
 
     @Override
-    void read(DBase db) {
+    public void read(DBase db) {
 
 
     }

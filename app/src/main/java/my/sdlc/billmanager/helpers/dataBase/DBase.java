@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import my.sdlc.billmanager.helpers.dataBase.tables.IncomeTable;
+import my.sdlc.billmanager.helpers.dataBase.tables.SpentTable;
 
 
 public class DBase extends SQLiteOpenHelper {

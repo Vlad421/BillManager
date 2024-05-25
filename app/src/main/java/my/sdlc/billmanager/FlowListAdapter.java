@@ -1,6 +1,8 @@
 package my.sdlc.billmanager;
 
 
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,28 +13,49 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import my.sdlc.billmanager.entity.flow.Earn;
+import my.sdlc.billmanager.entity.flow.Entry;
 
 public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryHolder> {
 
-    ArrayList<Earn> data;
+    ArrayList<Entry> data;
 
     class EntryHolder extends RecyclerView.ViewHolder {
-        TextView text;
+        TextView descriptionView;
+        TextView amountView;
+        TextView dateView;
+        TextView categoryView;
 
         public EntryHolder(@NonNull View itemView) {
             super(itemView);
 
-            text = itemView.findViewById(R.id.entry_item_description);
+            descriptionView = itemView.findViewById(R.id.entry_item_description);
+            amountView = itemView.findViewById(R.id.entry_amount);
+            dateView = itemView.findViewById(R.id.entry_date);
+            categoryView = itemView.findViewById(R.id.entry_category);
+
         }
 
-        public TextView getTextView() {
-            return text;
+        public TextView getDescriptionView() {
+            return descriptionView;
+        }
+
+
+
+        public TextView getAmountView() {
+            return amountView;
+        }
+
+        public TextView getDateView() {
+            return dateView;
+        }
+
+        public TextView getCategoryView() {
+            return categoryView;
         }
     }
 
 
-    public FlowListAdapter(ArrayList<Earn> data) {
+    public FlowListAdapter(ArrayList<Entry> data) {
         this.data = data;
     }
 
@@ -47,7 +70,12 @@ public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryH
 
     @Override
     public void onBindViewHolder(@NonNull EntryHolder holder, int position) {
-        holder.getTextView().setText(data.get(position).getCategory());
+        holder.getDescriptionView().setText(data.get(position).getDescription());
+        holder.getAmountView().setText(String.valueOf( data.get(position).getAmount()));
+        DateFormat date =  SimpleDateFormat.getDateInstance();
+
+        holder.getDateView().setText(date.format( data.get(position).getDate()));
+        holder.getCategoryView().setText(data.get(position).getCategory());
     }
 
     @Override
