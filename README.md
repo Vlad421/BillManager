@@ -59,7 +59,7 @@ To install and set up BillManager, follow these steps:
 ### For Linux
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/BillManager.git
+   git clone https://github.com/Vlad421/BillManager.git
    ```
 2. **Navigate to the project directory:**
    ```bash
@@ -80,19 +80,19 @@ To install and set up BillManager, follow these steps:
 
 ### For Windows
 1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/BillManager.git
+   ```cmd
+   git clone https://github.com/Vlad421/BillManager.git
    ```
 2. **Navigate to the project directory:**
-   ```bash
+   ```cmd
    cd BillManager
    ```
 3. **Build the project using Gradle:**
-   ```bash
+   ```cmd
    gradlew.bat build
    ```
 4. **To build the APK file:**
-   ```bash
+   ```cmd
    gradlew.bat assembleDebug
    ```
 5. **Install the APK on your Android device:**
@@ -105,13 +105,6 @@ To install and set up BillManager, follow these steps:
 
 Make sure you have the necessary environment variables set up, such as `JAVA_HOME`, `ANDROID_HOME`, and that the Android Debug Bridge (`adb`) is accessible from the command line.
 
-## Usage
-Here are some basic usage instructions:
-
-1. **Adding Income:** Navigate to the 'Income' section and click 'Add Income'. Fill in the details and save.
-2. **Recording Expenses:** Go to the 'Expenses' section, click 'Add Expense', enter the necessary details, and save.
-3. **Setting Budgets:** Head to the 'Budget' section, set your budget limits for different categories, and save.
-4. **Viewing Reports:** Visit the 'Reports' section to view detailed insights and analytics on your spending and income.
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
