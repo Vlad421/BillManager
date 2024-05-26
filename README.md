@@ -3,9 +3,6 @@
 BillManager is a home budgeting program designed to help you manage your finances efficiently. It allows you to track your income, expenses, and savings to stay on top of your budget.
 
 
-
-```markdown
-
 ## Main Features
 - **Organization of Expenses and Income:** Easily record and categorize your various sources of income and types of expenses.
 - **Reminders and Future Payments:** Set up reminders for future payments, recurring expenditures, and future incomes to help plan your budget (not implemented yet).
@@ -22,7 +19,6 @@ To build and run BillManager, you need to have the following installed:
 - **ADB (Android Debug Bridge):** Included with the Android SDK.
 
 
-```
 
 Ensure that the `JAVA_HOME` and `ANDROID_HOME` environment variables are set properly.
 
@@ -105,6 +101,16 @@ To install and set up BillManager, follow these steps:
 
 Make sure you have the necessary environment variables set up, such as `JAVA_HOME`, `ANDROID_HOME`, and that the Android Debug Bridge (`adb`) is accessible from the command line.
 
+## Contributor Guidelines
+Contributions to BillManager are welcome! Please follow these guidelines when contributing:
+
+- Fork the Repository: If you're planning to contribute, fork the repository to your GitHub account.
+- Branches: Create a new branch for your contributions. Branch names should be descriptive of the feature or fix you're working on.
+- Commit Messages: Write clear and descriptive commit messages that explain the purpose of your changes.
+- Pull Requests: Submit a pull request from your fork's branch to the main repository's branch. Provide a detailed description of your changes in the pull request.
+- Testing: Ensure that your changes are tested thoroughly. If applicable, include tests with your pull request.
+- Documentation: Update documentation, such as README files or inline code comments, to reflect your changes if necessary.
+- Be Respectful: Be respectful to others in your interactions on GitHub, including in issues and pull requests.
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
