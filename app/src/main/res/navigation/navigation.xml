@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2024.
   ~ Vlad421 https://github.com/Vlad421
   -->
@@ -14,22 +13,30 @@
         android:id="@+id/mainFragment"
         android:name="my.sdlc.billmanager.MainFragment"
         android:label="Main screen"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_incomeFlowFragment"
+            app:destination="@id/income_FlowFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_expensesFlowFragment"
+            app:destination="@id/expensesFlowFragment" />
         <action
             android:id="@+id/action_mainFragment_to_addFragment"
-            app:destination="@id/incomeFlowFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_addFragment2"
             app:destination="@id/addFragment" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_income_flow"
-        android:id="@+id/incomeFlowFragment"
+        android:id="@+id/income_FlowFragment"
         android:name="my.sdlc.billmanager.FlowFragment"
-        android:label="Flow" />
-
-    <fragment tools:layout="@layout/fragment_add_entry"
+        android:label="Income"
+        tools:layout="@layout/fragment_income_flow" />
+    <fragment
+        android:id="@+id/expensesFlowFragment"
+        android:name="my.sdlc.billmanager.FlowFragment"
+        android:label="Expenses"
+        tools:layout="@layout/fragment_income_flow" />
+    <fragment
         android:id="@+id/addFragment"
         android:name="my.sdlc.billmanager.AddFragment"
-        android:label="Add"/>
+        android:label="Add"
+        tools:layout="@layout/fragment_add_entry" />
 </navigation>

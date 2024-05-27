@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_add_expenses"
+        android:id="@+id/button_expenses_flow"
         style="@style/button_shape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,13 +31,13 @@
 
     <com.google.android.material.button.MaterialButton
 
-        android:id="@+id/button_add_income"
+        android:id="@+id/button_income_flow"
         style="@style/button_shape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_button_income"
 
-        app:layout_constraintTop_toBottomOf="@+id/button_add_expenses" />
+        app:layout_constraintTop_toBottomOf="@+id/button_expenses_flow" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

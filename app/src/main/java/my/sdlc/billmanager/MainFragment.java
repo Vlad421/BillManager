@@ -6,16 +6,15 @@
 package my.sdlc.billmanager;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
+import my.sdlc.billmanager.helpers.Constants;
 
 /**
  * @author Vlad421 <a href="https://github.com/Vlad421">...</a>
@@ -33,19 +32,37 @@ public class MainFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.fragment_main, container, false);
-        incomeButton = view.findViewById(R.id.button_add_income);
+        Bundle navigate = new Bundle();
+
+
+        incomeButton = view.findViewById(R.id.button_income_flow);
         incomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_addFragment);
+                navigate.putString("flow_type", Constants.Type.INCOME.toString());
+                Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_incomeFlowFragment, navigate);
             }
+
         });
+
+        expensesButton = view.findViewById(R.id.button_expenses_flow);
+        expensesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                navigate.putString("flow_type", Constants.Type.SPENT.toString());
+                Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_expensesFlowFragment, navigate);
+            }
+
+        });
+
+
         return view;
 
     }

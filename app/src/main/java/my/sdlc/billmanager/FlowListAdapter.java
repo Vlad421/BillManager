@@ -6,8 +6,6 @@
 package my.sdlc.billmanager;
 
 
-import android.icu.text.DateFormat;
-import android.icu.text.SimpleDateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 
 import my.sdlc.billmanager.entity.flow.Entry;
@@ -89,9 +88,10 @@ public class FlowListAdapter extends RecyclerView.Adapter<FlowListAdapter.EntryH
 
     @Override
     public void onBindViewHolder(@NonNull EntryHolder holder, int position) {
+
         holder.getDescriptionView().setText(data.get(position).getDescription());
         holder.getAmountView().setText(String.valueOf( data.get(position).getAmount()));
-        DateFormat date =  SimpleDateFormat.getDateInstance();
+        DateFormat date =  DateFormat.getDateInstance();
 
         holder.getDateView().setText(date.format( data.get(position).getDate()));
         holder.getCategoryView().setText(data.get(position).getCategory());
